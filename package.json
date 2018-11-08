@@ -1,0 +1,29 @@
+{
+  "name": "front-iqm-next",
+  "version": "1.0.0",
+  "description": "IQ Money portal application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pwiniarski/front-iqm-next.git"
+  },
+  "keywords": [
+    "IQ",
+    "Money",
+    "front-iqm"
+  ],
+  "author": "Piotr Winiarski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pwiniarski/front-iqm-next/issues"
+  },
+  "homepage": "https://github.com/pwiniarski/front-iqm-next#readme",
+  "dependencies": {
+    "next": "^7.0.2",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1"
+  }
+}
