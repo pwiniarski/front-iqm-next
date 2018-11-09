@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "IQ Money portal application",
   "main": "index.js",
-  "private": "true",
+  "private": true,
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/pwiniarski/front-iqm-next#readme",
   "dependencies": {
+    "mobx": "^5.6.0",
     "mobx-react": "^5.3.6",
     "next": "^7.0.2",
     "react": "^16.6.1",
@@ -33,7 +34,8 @@
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "webpack": "^4.25.1",
+    "@babel/plugin-proposal-decorators": "^7.1.2",
+    "webpack": "4.24.0",
     "webpack-cli": "^3.1.2"
   }
 }

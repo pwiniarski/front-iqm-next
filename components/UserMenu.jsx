@@ -1,15 +1,15 @@
 // FloatingMenu.js
 import React, { Component } from "react";
 import { inject, observer, useStaticRendering } from "mobx-react";
-import Avatar from "../Avatar";
-import { UsersStore } from "../../stores/UsersStore";
+//import Avatar from "./Avatar";
+//import { UsersStore } from "../../stores/UsersStore";
 import { observable } from "mobx";
-import DropdownMenu from "../DropdownMenu";
-import DropdownMenuItem from "../DropdownMenuItem";
+import DropdownMenu from "./DropDownMenu";
+import DropdownMenuItem from "./DropDownMenuItem";
 import StyledUserMenu from '../styles/usermenu';
 
 
-@inject('store', 'routerStore')
+@inject('store')
 @observer
 export default class UserMenu extends Component {
 
@@ -51,22 +51,12 @@ export default class UserMenu extends Component {
 
         var { store, theme = null, addTopMargin=false } = this.props;
 
-        if (UsersStore.isLoggedIn === false) {
-            return null;
-        }
-
-        var classes = classNames({
-            'UserMenu': true,
-            'show-for-large': true,
-            'isCartEmpty': store.cart.isEmpty,
-            [theme]: theme,
-            'open': this.open,
-            'topMargin16': addTopMargin
-        });
+        // if (UsersStore.isLoggedIn === false) {
+        //     return null;
+        // }
 
         return (
-            <StyledUserMenu className={classes} ref={node => this.node = node}>
-
+            <StyledUserMenu ref={node => this.node = node}>
                 {/* <Avatar
                     size="small"
                     side='right'

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default UserMenu = styled`
+const UserMenu = styled.div`
     position: absolute;
     right: 10px;
     top: 0px;
@@ -22,3 +22,5 @@ export default UserMenu = styled`
         }
     }
 `;
+
+export default UserMenu;

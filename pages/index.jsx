@@ -1,7 +1,6 @@
-import Link from 'next/link';
 import UserMenu from '../components/UserMenu';
 
-const Index = () => (
+const Home = () => (
 <React.Fragment>
     <div className="page home">
         <h1>Title</h1>
@@ -292,4 +291,4 @@ const Index = () => (
 </React.Fragment>
   )
   
-  export default Index
+  export default Home;
