@@ -1,3 +1,6 @@
+import moment from 'moment';
+import React from "react";
+
 import UserMenu from '../components/UserMenu';
 
 const Home = () => (

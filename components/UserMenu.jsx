@@ -1,28 +1,19 @@
 // FloatingMenu.js
 import React, { Component } from "react";
-import { inject, observer, useStaticRendering } from "mobx-react";
-//import Avatar from "./Avatar";
+import { connect } from 'redux';
+import Avatar from "./Avatar";
 //import { UsersStore } from "../../stores/UsersStore";
-import { observable } from "mobx";
 import DropdownMenu from "./DropDownMenu";
 import DropdownMenuItem from "./DropDownMenuItem";
 import StyledUserMenu from '../styles/usermenu';
+import AvatarImg from './../images/home-bg.jpg';
 
-
-@inject('store')
-@observer
 export default class UserMenu extends Component {
 
-    @observable open = false;
-    //useStaticRendering(true);
-
-    componentWillReact() {
-        console.log("I will re-render, since the todo has changed!")
-    }
+    open = false;
 
     constructor(props) {
         super(props);
-
         this.node = null;
     }
 
@@ -47,27 +38,33 @@ export default class UserMenu extends Component {
         }
     }
 
-    render() {
+    toggleAvatar = () => {
+        this.open = !this.open;
+    }
 
-        var { store, theme = null, addTopMargin=false } = this.props;
+    render() {
+        var {theme = null, addTopMargin=false } = this.props;
 
         // if (UsersStore.isLoggedIn === false) {
         //     return null;
         // }
 
+        console.log('Avatar Image: ', AvatarImg)
+
         return (
             <StyledUserMenu ref={node => this.node = node}>
-                {/* <Avatar
+                <Avatar
                     size="small"
                     side='right'
-                    imageUrl={'/avatar_person.jpg'} onClick={e => this.open = !this.open}>
-                    <div className="">
+                    imageUrl={AvatarImg} 
+                    onClick={this.toggleAvatar}
+                >
+                    <div>
 
-                        {UsersStore.welcomeName}
+                        {/* {UsersStore.welcomeName} */}
 
                     </div>
-                </Avatar> */}
-
+                </Avatar>
                 <DropdownMenu isVisible={this.open}>
 
                     <DropdownMenuItem rel="nofollow" to='logout'>Wyloguj</DropdownMenuItem>
